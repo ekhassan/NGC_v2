@@ -34,7 +34,7 @@ class HomeController extends Controller
      */
     public function superAdminHome()
     {
-        return view('superAdminHome');
+        return view('products.index');
     }
 
     /**

@@ -38,7 +38,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 
 Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
   
-    Route::get('/super-admin/home', [HomeController::class, 'superAdminHome'])->name('super.admin.home');
+    Route::get('/super-admin/home', [HomeController::class, 'superAdminHome'])->name('products.index');
 });
   
 
