@@ -36,7 +36,7 @@
                         <h3 class="font-italic">IF YOU BUILD IT, THEY <br>
                             <h1 class="font-weight-bolder"> WILL LOSE.</h1>
                         </h3> <br>
-                        <h5>USHERING A NEW DAWN FOR GAMING COMPUTERS</h5>
+                        <h5>Ushering a new dawn for <br> <h5 class="font-weight-bolder">Gaming Computers</h5></h5>
                         <br>
                         <br>
                         <a href="{{ url('/login') }}" role="button" class="btn bttn btn-outline-dark shadow w-50">Get
@@ -349,23 +349,23 @@
                                     <i class=" social fa-brands fa-square-facebook"></a></i>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link ">
+                                <a href="https://www.instagram.com" target="_blank" class="nav-link ">
                                     <i class="fa-brands fa-instagram"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link ">
+                                <a href="https://www.tiktok.com" target="_blank" class="nav-link ">
                                     <i class="fa-brands fa-tiktok"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link ">
+                                <a href="https://www.youtube.com" target="_blank" class="nav-link ">
                                     <i class="fa-brands fa-youtube"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link ">
+                                <a href="https://www.twitter.com" target="_blank" class="nav-link ">
                                     <i class="fa-brands fa-twitter"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link ">
+                                <a href="https://www.pinterest.com" target="_blank" class="nav-link ">
                                     <i class="fa-brands fa-pinterest"></i></a>
                             </li>
                         </ul>

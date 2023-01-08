@@ -103,8 +103,7 @@
     {{-- DATATABLES --}}
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-
-    {{--  --}}
+    {{-- DATATABLES end --}}
 
     <link rel="stylesheet" href="{{ URL::asset('css/admin.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
@@ -125,7 +124,10 @@
                 font-size: 3.5rem;
             }
         }
-
+        .active
+        {
+            border: 1px solid #212529;
+        }
         .dash {
             font-size: 18px;
             color: #212529 !important;
@@ -154,14 +156,14 @@
     <div class="header">
         <div class="menu-bar">
             <nav class="navbar navbar-expand-lg fixed-top navbar-light shadow-sm">
-                <a class="navbar-brand" href="{{ url('/') }}">NGC <span class="h6">->Admin</span></a>
+                <a class="navbar-brand" href="{{ route('products.index') }}">NGC <span class="h6">->Admin</span></a>
                 <button class="navbar-toggler " type="button" data-toggle="offcanvas">
                     <i class="fa-solid fa-bars"></i></span>
                 </button>
 
                 <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('products') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -218,17 +220,13 @@
 
         <div class="nav-scroller bg-white pb-5 shadow-sm mt-5">
             <nav class="nav ml-3">
-                <a class="dash nav-link border border-dark" href="{{ route('products.index') }}"><i
+                <a class="dash nav-link active" href="{{ route('products.index') }}"><i
                         class="fa-solid fa-gauge"></i> Dashboard</a>
                 <a class="dash nav-link" href="#"><i class="fa-solid fa-users"></i> Users</a>
                 <a class="dash nav-link" href="#"><i class="fa-solid fa-box-open"></i> Orders</a>
                 <a class="dash nav-link" href="#"><i class="fa-solid fa-user"></i> Profile</a>
                 <a class="dash ad nav-link" href="{{ route('products.create') }}"><i
                         class="fa-solid fa-circle-plus"></i> Add Products</a>
-                <a class="dash ch nav-link" href="#"><i class="fa-solid fa-check-to-slot"></i> Check
-                    Products</a>
-                <a class="dash dl nav-link" href="#"><i class="fa-solid fa-trash-can"></i> Delete Products</a>
-
             </nav>
         </div>
     </div>
@@ -267,7 +265,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Brand</th>
                         <th scope="col">Price $</th>
-                        <th scope="col">Screen Size</th>
+                        <th scope="col">Screen Size (inches)</th>
                         <th scope="col">Resolution</th>
                         <th scope="col">Type</th>
                         <th scope="col">Actions</th>
@@ -291,18 +289,20 @@
                             <td>
                                 <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                                     <div class="btn btn-group btn-sm">
-                                        <a class="btn btn-outline-info"
-                                            href="{{ route('products.show', $product->id) }}"><i class="fa fa-eye"
+                                        <a class="btn btn-outline-info" href="{{ route('products.show', $product->id) }}" data-toggle = "tooltip" data-placement = "bottom"
+                                            title = "View"><i class="fa fa-eye"
                                                 aria-hidden="true"></i></a>
 
                                         <a class="btn btn-outline-primary"
-                                            href="{{ route('products.edit', $product->id) }}"><i
+                                            href="{{ route('products.edit', $product->id) }}" data-toggle = "tooltip" data-placement = "bottom"
+                                            title = "Edit"><i
                                                 class="fas fa-edit"></i></a>
 
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-outline-danger" value="fa fa-trash"><i
+                                        <button type="submit" class="btn btn-outline-danger" value="fa fa-trash" data-toggle = "tooltip" 
+                                        data-placement = "bottom" title = "Delete"><i
                                                 class="fa fa-trash" aria-hidden="true"></i></button>
                                     </div>
                                 </form>
@@ -322,6 +322,21 @@
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
+
+        $(function () { $("[data-toggle = 'tooltip']").tooltip(); });
+
+        nav = document.querySelector(".nav").querySelectorAll("a");
+        console.log(nav);
+        nav.forEach(element=>{
+                element.addEventListener("click",function() {
+                    nav.forEach(nav=>nav.classList.remove("active"))
+                    
+                    this.classList.add("active");
+                })
+        });
+    </script>
+    <script>
+        
     </script>
 
 </body>
