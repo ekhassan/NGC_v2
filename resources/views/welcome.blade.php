@@ -44,7 +44,7 @@
 
                     </div>
                     <div class="col-lg-6 order-lg-2 p-5" style="margin-top:-5%">
-                        <img src="https://cdn-icons-png.flaticon.com/512/771/771196.png" alt="landing image"
+                        <img src="{{ URL::asset('images/main.png') }}" alt="landing image"
                             class="img-fluid rounded mx-auto d-block avatar">
                     </div>
                 </div>

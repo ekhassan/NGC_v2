@@ -249,9 +249,9 @@
         <div class="row ">
 
             <div class="card-deck">
-               <div class="card" style="max-width: 540px;">
+               <div class="card" style="max-width: 300px;">
                
-                   <img class="card-img-top" src="/images/{{ $product->image }}" alt="image">
+                   <img class="card-img-top" src="/images/{{ $product->image }}" alt="image" style="">
                    <div class="card-body">
                        <h5 class="card-title">{{ $product->title}}</h5>
                        <hr>
