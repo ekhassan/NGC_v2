@@ -59,6 +59,7 @@ Route::get('ship',[ContactController::class,'readyShip'])->name('toship');
 // Contact US
 Route::get('contact', [ContactController::class, 'contact']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+
 // Subscribe Mail
 Route::get('/', [SubmailController::class, 'submail']);
 Route::post('submail', [SubmailController::class, 'substore'])->name('contact.us.substore');
